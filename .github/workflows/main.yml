@@ -14,8 +14,6 @@ jobs:
       - name: Run JFrog CLI
         run: |
           # Collect environment variables for the build
-          jfrog rt bce --build-name=yahav --build-number=1
-          # Collect VCS details from git and add them to the build
-          jfrog rt bag --build-name=yahav --build-number=1
+          jfrog rt bce yahav 1
           # Publish build info
           jfrog rt bp yahav 1

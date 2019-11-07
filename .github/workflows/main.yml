@@ -13,7 +13,7 @@ jobs:
           JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SERVER_1 }}
       - name: Run JFrog CLI
         run: |
-          # Collect environment variables for the build
-          jfrog rt bce yahav 1
+          # Upload a file to Artifactory
+          jfrog rt upload resources/demoFile generic-local/
           # Publish build info
-          jfrog rt bp yahav 1
+          jfrog rt bp

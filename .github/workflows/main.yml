@@ -17,4 +17,3 @@ jobs:
           jfrog rt upload resources/demoFile generic-local/
           # Publish build info
           jfrog rt bp
-# Run this action!

@@ -12,8 +12,4 @@ jobs:
         env:
           JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SERVER_1 }}
       - name: Run JFrog CLI
-        run: |
-          # Upload a file to Artifactory
-          jfrog rt upload resources/demoFile generic-local/
-          # Publish build info
-          jfrog rt bp
+        run: docker --version

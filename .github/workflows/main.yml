@@ -3,7 +3,11 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+        fail-fast: false
+        matrix:
+            os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -12,4 +16,4 @@ jobs:
         env:
           JF_ARTIFACTORY_SERVER: ${{ secrets.JF_ARTIFACTORY_SERVER_1 }}
       - name: Run JFrog CLI
-        run: docker version
+        run: docker version --format '{{.Client.DefaultAPIVersion}}'

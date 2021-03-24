@@ -1,3 +1,4 @@
+#setup Jfrg CLI example
 name: "Setup JFrog CLI Example"
 on: push
 
